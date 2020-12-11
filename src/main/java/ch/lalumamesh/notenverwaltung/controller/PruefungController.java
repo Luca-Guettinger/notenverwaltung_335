@@ -2,6 +2,7 @@ package ch.lalumamesh.notenverwaltung.controller;
 
 import ch.lalumamesh.notenverwaltung.model.Pruefung;
 import ch.lalumamesh.notenverwaltung.service.PruefungService;
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,8 +25,8 @@ public class PruefungController {
     }
 
     @PostMapping
-    public <S extends Pruefung> S save(S s) {
-        return pruefungService.save(s);
+    public Pruefung save(@RequestBody Pruefung pruefung) {
+        return pruefungService.save(pruefung);
     }
 
     @GetMapping("{id}")

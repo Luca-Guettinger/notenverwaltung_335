@@ -24,10 +24,6 @@ public class Pruefung {
     private String title;
     @Column(nullable = false)
     private Double note;
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @Column
-    private LocalDateTime datum;
     @ManyToOne
     @JoinColumn(nullable = false, name = "SEMESTER_ID")
     private Semester semester;
